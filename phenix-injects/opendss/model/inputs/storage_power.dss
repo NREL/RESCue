@@ -1,0 +1,14 @@
+
+// New Loadshape.storageShape  npts=24  interval=1 mult=[0 0 -1 -1 -1 -1 -1 0 0 0 0 0 0 0 0 0 0.5 0.5 0.5 1 0.5 .5 .5 0]
+New Loadshape.storageShape mInterval=1  npts=1440  Csvfile="_Storage.CSV"
+
+! Define the storage element and dispatch it in "follow" mode
+
+// New Storage.Battery_680 phases=3 Bus1=680 kV=4.16     kWrated=200  kWhrated=2000  dispmode=FOLLOW  daily=storageShape  kWhstored=0 TimeChargeTrig=-1 %reserve=0 %EffCharge=100 %EffDischarge=100 %IdlingkW=0 ChargeTrigger=0
+
+New Storage.Battery_680 phases=3 Bus1=storagebus kV=2.4  kWrated=100  kWhrated=800  dispmode=EXTERNAL daily=storageShape kWhstored=400 TimeChargeTrig=-1 %reserve=0 %EffCharge=100 %EffDischarge=100 %IdlingkW=10 ChargeTrigger=0
+New Storage.Battery_680b phases=3 Bus1=storagebus kV=2.4  kWrated=100  kWhrated=800  dispmode=EXTERNAL daily=storageShape kWhstored=300 TimeChargeTrig=-1 %reserve=0 %EffCharge=100 %EffDischarge=100 %IdlingkW=10 ChargeTrigger=0
+
+
+New StorageController.BMS  element=Line.671684 terminal=2 kWTarget=15 eventlog=y modedischarge=PEAKSHAVE ElementList=[Battery_680, Battery_680b]
+

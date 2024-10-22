@@ -1,0 +1,153 @@
+apiVersion: phenix.sandia.gov/v1
+kind: Image
+metadata:
+    name: otsim-opnsrc
+    created: "2024-06-17T14:41:41-06:00"
+    updated: "2024-07-08T14:27:06-06:00"
+spec:
+    compress: true
+    deb_append: ' --components=main,restricted,universe,multiverse'
+    format: qcow2
+    overlays: null
+    ramdisk: false
+    mirror: http://us.archive.ubuntu.com/ubuntu/
+    packages:
+        - build-essential
+        - cmake
+        - curl
+        - dbus
+        - ftp
+        - git
+        - ifupdown
+        - init
+        - initramfs-tools
+        - iputils-ping
+        - isc-dhcp-client
+        - less
+        - libboost-dev
+        - libboost-atomic1.74.0
+        - libboost-chrono1.74.0
+        - libboost-date-time1.74.0
+        - libboost-filesystem1.74.0
+        - libboost-iostreams1.74.0
+        - libboost-program-options1.74.0
+        - libboost-regex1.74.0
+        - libboost-serialization1.74.0
+        - libboost-system1.74.0
+        - libboost-thread1.74.0
+        - libczmq-dev
+        - libczmq4
+        - libfreetype6
+        - liblapack3
+        - libsodium23
+        - libspdlog1
+        - libxml2-dev
+        - libzmq3-dev
+        - libzmq5
+        - linux-headers-generic
+        - linux-image-generic
+        - nano
+        - net-tools
+        - netbase
+        - openssh-server
+        - pkg-config
+        - python3-dev
+        - python3-pip
+        - python3-setuptools
+        - python3-six
+        - python3-wheel
+        - socat
+        - sudo
+        - tcpdump
+        - tmux
+        - vim
+        - vsftpd
+        - wget
+    release: jammy
+    script_order:
+        - POSTBUILD_NO_ROOT_PASSWD
+        - POSTBUILD_PHENIX_HOSTNAME
+        - POSTBUILD_PHENIX_BASE
+        - POSTBUILD_APT_CLEANUP
+        - INSTALL_GOLANG
+        - INSTALL_OTSIM
+    scripts:
+        INSTALL_GOLANG: |
+            wget -O go.tgz https://golang.org/dl/go1.21.8.linux-amd64.tar.gz && tar -C /usr/local -xzf go.tgz && rm go.tgz \
+            && ln -s /usr/local/go/bin/* /usr/local/bin 
+        INSTALL_OTSIM: |
+            git clone --branch main https://github.com/patsec/ot-sim.git /opt/ot-sim
+            cd /opt/ot-sim
+            cmake -S . -B build && cmake --build build --target install -j$(nproc) && ldconfig
+            GOROOT=/usr/local/go make -C src/go install
+            python3 -m pip install src/python
+
+            apt clean
+            apt autoremove -y
+
+            cat > /etc/systemd/system/ot-sim.service <<EOF
+            [Unit]
+            Description=ot-sim CPU module
+            After=network.target systemd-hostnamed.service
+            ConditionFileNotEmpty=/etc/ot-sim/config.xml
+            [Service]
+            ExecStart=/usr/local/bin/ot-sim-cpu-module /etc/ot-sim/config.xml
+            Restart=always
+            RestartSec=3
+            [Install]
+            WantedBy=multi-user.target
+            EOF
+
+            mkdir -p /etc/systemd/system/multi-user.target.wants
+            ln -s /etc/systemd/system/ot-sim.service /etc/systemd/system/multi-user.target.wants/ot-sim.service
+        POSTBUILD_APT_CLEANUP: |
+            apt clean || apt-get clean || echo "unable to clean apt cache"
+        POSTBUILD_NO_ROOT_PASSWD: |
+            sed -i 's/nullok_secure/nullok/' /etc/pam.d/common-auth
+            sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+            sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords yes/' /etc/ssh/sshd_config
+            sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+            sed -i 's/PermitEmptyPasswords no/PermitEmptyPasswords yes/' /etc/ssh/sshd_config
+            passwd -d root
+        POSTBUILD_PHENIX_BASE: |
+            cat > /etc/systemd/system/phenix.service <<EOF
+            [Unit]
+            Description=phenix startup service
+            After=network.target systemd-hostnamed.service
+            [Service]
+            Environment=LD_LIBRARY_PATH=/usr/local/lib
+            ExecStart=/usr/local/bin/phenix-start.sh
+            RemainAfterExit=true
+            StandardOutput=journal
+            Type=oneshot
+            [Install]
+            WantedBy=multi-user.target
+            EOF
+            mkdir -p /etc/systemd/system/multi-user.target.wants
+            ln -s /etc/systemd/system/phenix.service /etc/systemd/system/multi-user.target.wants/phenix.service
+            mkdir -p /usr/local/bin
+            cat > /usr/local/bin/phenix-start.sh <<EOF
+            #!/bin/bash
+            for file in /etc/phenix/startup/*; do
+              echo \$file
+              bash \$file
+            done
+            EOF
+            chmod +x /usr/local/bin/phenix-start.sh
+            mkdir -p /etc/phenix/startup
+        POSTBUILD_PHENIX_HOSTNAME: |
+            echo "phenix" > /etc/hostname
+            sed -i 's/127.0.1.1 .*/127.0.1.1 phenix/' /etc/hosts
+            cat > /etc/motd <<EOF
+
+            ██████╗ ██╗  ██╗███████╗███╗  ██╗██╗██╗  ██╗
+            ██╔══██╗██║  ██║██╔════╝████╗ ██║██║╚██╗██╔╝
+            ██████╔╝███████║█████╗  ██╔██╗██║██║ ╚███╔╝
+            ██╔═══╝ ██╔══██║██╔══╝  ██║╚████║██║ ██╔██╗
+            ██║     ██║  ██║███████╗██║ ╚███║██║██╔╝╚██╗
+            ╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝  ╚══╝╚═╝╚═╝  ╚═╝
+
+            EOF
+            echo "\nBuilt with phenix image on $(date)\n\n" >> /etc/motd
+    size: 10G
+    variant: minbase

@@ -1,0 +1,1653 @@
+{
+  "name": "opendss",
+  "loglevel": "debug",
+  "coreType": "zmq",
+  "period": 1,
+  "real_time": true,
+  "uninterruptible": "false",
+  "terminate_on_error": "true",
+  "brokeraddress": "tcp://172.16.0.2",
+  "publications": [
+    {
+      "key": "cap1.status",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "cap1.freq",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "cap1.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "cap1.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "cap1.power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "cap2.status",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "cap2.freq",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "cap2.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "cap2.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "cap2.power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfaseb.status",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "regfaseb.freq",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "regfaseb.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "regfaseb.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "regfaseb.power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfasec.status",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "regfasec.freq",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "regfasec.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "regfasec.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "regfasec.power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfasea.status",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "regfasea.freq",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "regfasea.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "regfasea.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "regfasea.power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "671692.status",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "671692.freq",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "671692.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "671692.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "671692.power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "breaker680.status",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "breaker680.freq",
+      "type": "double",
+      "unit": ""
+    },
+    {
+      "key": "breaker680.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "breaker680.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "breaker680.power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "reg.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "reg.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "650.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "650.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "632.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "632.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "670.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "670.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "634.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "634.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "671.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "671.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "680.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "680.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "633.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "633.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "645.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "645.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "pv_680.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_680.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "646.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "646.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "pv_633.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_633.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "692.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "692.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "675.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "675.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "684.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "684.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "pv_692.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_692.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "611.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "611.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "652.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "652.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "pv_675.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_675.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "sourcebus.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "sourcebus.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "pv_645.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_645.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "pv_646.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_646.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "pv_611.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_611.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "pv_652.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_652.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "storagebus.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "storagebus.angle",
+      "type": "double",
+      "unit": "radians"
+    },
+    {
+      "key": "634a.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "634a.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "634a.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "634a.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "634b.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "634b.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "634b.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "634b.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "634c.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "634c.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "634c.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "634c.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "645b.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "645b.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "645b.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "645b.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "646b.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "646b.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "646b.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "646b.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "692c.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "692c.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "692c.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "692c.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "675a.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "675a.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "675a.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "675a.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "675b.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "675b.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "675b.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "675b.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "670c.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "670c.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "670c.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "670c.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "675c.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "675c.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "675c.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "675c.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "611c.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "611c.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "611c.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "611c.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "652a.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "652a.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "652a.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "652a.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "670a.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "670a.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "670a.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "670a.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "670b.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "670b.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "670b.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "670b.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "650632.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "650632.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "650632.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "650632.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "650632.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "650632.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "650632.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "650632.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "632670.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "632670.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "632670.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "632670.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "632670.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "632670.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "632670.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "632670.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "670671.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "670671.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "670671.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "670671.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "670671.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "670671.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "670671.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "670671.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "671680.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "671680.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "671680.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "671680.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "671680.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "671680.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "671680.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "671680.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "632633.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "632633.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "632633.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "632633.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "632633.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "632633.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "632633.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "632633.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "632645.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "632645.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "632645.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "632645.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "632645.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "632645.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "632645.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "632645.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "645646.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "645646.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "645646.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "645646.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "645646.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "645646.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "645646.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "645646.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "692675.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "692675.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "692675.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "692675.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "692675.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "692675.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "692675.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "692675.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "671684.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "671684.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "671684.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "671684.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "671684.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "671684.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "671684.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "671684.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "684611.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "684611.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "684611.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "684611.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "684611.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "684611.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "684611.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "684611.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "684652.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "684652.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "684652.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "684652.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "684652.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "684652.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "684652.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "684652.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "battery_680.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "battery_680.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "battery_680.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "battery_680.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "battery_680.soc",
+      "type": "double",
+      "unit": "%"
+    },
+    {
+      "key": "battery_680b.voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "battery_680b.current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "battery_680b.active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "battery_680b.reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "battery_680b.soc",
+      "type": "double",
+      "unit": "%"
+    },
+    {
+      "key": "pv_652_1.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_652_1.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "pv_652_1.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_652_1.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_652_1.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_652_1.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "pv_652_1.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_652_1.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "subestacao.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "subestacao.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "subestacao.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "subestacao.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "subestacao.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "subestacao.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "subestacao.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "subestacao.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "xfm1.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "xfm1.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "xfm1.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "xfm1.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "xfm1.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "xfm1.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "xfm1.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "xfm1.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfasea.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "regfasea.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "regfasea.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfasea.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfasea.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "regfasea.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "regfasea.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfasea.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfaseb.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "regfaseb.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "regfaseb.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfaseb.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfaseb.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "regfaseb.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "regfaseb.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfaseb.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfasec.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "regfasec.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "regfasec.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfasec.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfasec.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "regfasec.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "regfasec.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "regfasec.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_645_1.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_645_1.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "pv_645_1.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_645_1.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_645_1.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_645_1.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "pv_645_1.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_645_1.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_645_2.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_645_2.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "pv_645_2.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_645_2.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_645_2.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_645_2.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "pv_645_2.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_645_2.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_646_1.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_646_1.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "pv_646_1.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_646_1.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_646_1.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_646_1.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "pv_646_1.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_646_1.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_646_2.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_646_2.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "pv_646_2.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_646_2.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_646_2.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_646_2.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "pv_646_2.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_646_2.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_611_1.from_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_611_1.from_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "pv_611_1.from_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_611_1.from_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_611_1.to_voltage",
+      "type": "double",
+      "unit": "V"
+    },
+    {
+      "key": "pv_611_1.to_current",
+      "type": "double",
+      "unit": "A"
+    },
+    {
+      "key": "pv_611_1.to_active_power",
+      "type": "double",
+      "unit": "kW"
+    },
+    {
+      "key": "pv_611_1.to_reactive_power",
+      "type": "double",
+      "unit": "kW"
+    }
+  ],
+  "subscriptions": [],
+  "endpoints": [
+    {
+      "name": "updates"
+    }
+  ]
+}

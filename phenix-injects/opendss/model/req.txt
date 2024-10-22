@@ -1,0 +1,5 @@
+dss-python==0.14.4
+dss-python-backend==0.13.4
+OpenDSS-wrapper @ git+https://github.com/NREL/OpenDSS-wrapper.git@v1.5
+OpenDSSDirect.py==0.8.4
+helics==3.5.3

@@ -1,0 +1,441 @@
+apiVersion: phenix.sandia.gov/v1
+kind: Topology
+metadata:
+  name: ah-test-topology
+spec:
+  nodes:
+  # Control
+  - type: VirtualMachine
+    general:
+      hostname: energy-management-system
+    hardware:
+      drives:
+      - image: otsim-opnsrc.qc2
+      memory: 1024
+      os_type: linux
+      vcpus: 2
+    network:
+      interfaces:
+      - address: 10.135.1.31
+        mask: 24
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: bess
+      - address: 10.135.2.31
+        mask: 24
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: control
+      - address: 10.135.3.30
+        mask: 24
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: safety
+      - address: 10.135.4.30
+        gateway: 10.135.4.254
+        mask: 24
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: site
+    injections:
+    - src: /phenix/RESCue/phenix-injects/ems/45_ipv4forward.sh
+      dst: /etc/phenix/startup/45_ipv4forward.sh
+      permissions: '0777'
+    
+
+  - type: Router
+    general:
+      hostname: rtr-site
+    hardware:
+      drives:
+      - image: vyatta.qc2
+      os_type: vyatta
+    network:
+      interfaces:
+      - address: 192.168.1.253
+        mask: 24
+        gateway: 192.168.1.254
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: sitewan
+      - address: 10.135.4.254
+        mask: 24
+        name: IF1
+        proto: static
+        type: ethernet
+        vlan: site
+      routes:
+      - destination: 10.135.0.0/16
+        next: 10.135.4.30
+
+  - type: Router
+    general:
+      hostname: rtr-isp
+    hardware:
+      drives:
+      - image: vyatta.qc2
+      os_type: vyatta
+    network:
+      interfaces:
+      - address: 192.168.100.254
+        mask: 24
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: internet
+      - address: 192.168.1.254
+        mask: 24
+        gateway: 192.168.1.253
+        name: IF1
+        proto: static
+        type: ethernet
+        vlan: sitewan
+      - address: 192.168.44.254
+        mask: 24
+        name: IF2
+        proto: static
+        type: ethernet
+        vlan: attacknet1
+      - address: 192.168.55.254
+        mask: 24
+        name: IF3
+        proto: static
+        type: ethernet
+        vlan: attacknet2
+      - address: 192.168.66.254
+        mask: 24
+        name: IF4
+        proto: static
+        type: ethernet
+        vlan: attacknet3
+      routes:
+      - destination: 10.135.0.0/16
+        next: 10.135.4.30
+
+  - type: VirtualMachine
+    general:
+      hostname: power-conversion-system
+    hardware:
+      drives:
+      - image: otsim-opnsrc.qc2
+      memory: 1024
+      os_type: linux
+      vcpus: 2
+    network:
+      interfaces:
+      - address: 10.135.2.32
+        mask: 24
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: control
+    
+  - type: VirtualMachine
+    general:
+      hostname: hmi
+    hardware:
+      drives:
+      - image: ot-sim-nr-gui.qc2
+      memory: 4096
+      os_type: linux
+      vcpus: 2
+    network:
+      interfaces:
+      - address: 10.135.2.33
+        mask: 24
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: control
+      routes:
+      - destination: 0.0.0.0/0
+        next: 10.135.2.31
+    injections:
+
+    
+  - type: VirtualMachine
+    general:
+      hostname: meter
+    hardware:
+      drives:
+      - image: otsim-opnsrc.qc2
+      memory: 1024
+      os_type: linux
+      vcpus: 1
+    network:
+      interfaces:
+      - name: IF0
+        address: 10.135.2.34
+        mask: 24
+        proto: static
+        type: ethernet
+        vlan: control
+      - name: IF1
+        address: 172.16.194.34
+        mask: 16
+        proto: static
+        type: ethernet
+        vlan: MGMT
+    
+
+  - type: VirtualMachine
+    general:
+      hostname: cloud-service
+    hardware:
+      drives:
+      - image: otsim-opnsrc.qc2
+      memory: 1024
+      os_type: linux
+      vcpus: 1
+    network:
+      interfaces:
+      - name: eth0
+        address: 192.168.100.123
+        mask: 24
+        proto: static
+        type: ethernet
+        vlan: internet
+      routes:
+      - destination: 0.0.0.0/0
+        next: 192.168.100.254
+    injections:
+    - src: /phenix/RESCue/phenix-injects/cloud-service/protonuke
+      dst: /usr/local/bin/protonuke
+      permissions: '0777'
+    - src: /phenix/RESCue/phenix-injects/cloud-service/55_protonuke.sh
+      dst: /etc/phenix/startup/55_protonuke.sh
+      permissions: '0777'
+
+  - type: VirtualMachine
+    general:
+      hostname: remote-attacker1
+    hardware:
+      drives:
+      - image: attacker-lite-gui.qc2
+      memory: 2048
+      os_type: linux
+      vcpus: 2
+    network:
+      interfaces:
+      - name: IF0
+        address: 192.168.44.144
+        mask: 24
+        proto: static
+        type: ethernet
+        vlan: attacknet1
+      routes:
+      - destination: 0.0.0.0/0
+        next: 192.168.44.254
+
+  - type: VirtualMachine
+    general:
+      hostname: remote-attacker2
+    hardware:
+      drives:
+      - image: attacker-lite-gui.qc2
+      memory: 2048
+      os_type: linux
+      vcpus: 2
+    network:
+      interfaces:
+      - name: IF0
+        address: 192.168.55.144
+        mask: 24
+        proto: static
+        type: ethernet
+        vlan: attacknet2
+      routes:
+      - destination: 0.0.0.0/0
+        next: 192.168.55.254
+
+  - type: VirtualMachine
+    general:
+      hostname: remote-attacker3
+    hardware:
+      drives:
+      - image: attacker-lite-gui.qc2
+      memory: 2048
+      os_type: linux
+      vcpus: 2
+    network:
+      interfaces:
+      - name: IF0
+        address: 192.168.66.144
+        mask: 24
+        proto: static
+        type: ethernet
+        vlan: attacknet3
+      routes:
+      - destination: 0.0.0.0/0
+        next: 192.168.66.254
+
+# Batteries
+  - type: VirtualMachine
+    general:
+      hostname: bess-rtu
+    hardware:
+      drives:
+      - image: otsim-opnsrc.qc2
+      memory: 1024
+      os_type: linux
+      vcpus: 1
+    network:
+      interfaces:
+      - address: 10.135.1.35
+        mask: 24
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: bess
+      - address: 10.135.2.38
+        mask: 24
+        name: IF1
+        proto: static
+        type: ethernet
+        vlan: battery-1
+      - address: 10.135.9.35
+        mask: 24
+        name: IF2
+        proto: static
+        type: ethernet
+        vlan: battery-2
+
+  - type: VirtualMachine
+    general:
+      hostname: battery-management-system-1
+    hardware:
+      drives:
+      - image: otsim-opnsrc.qc2
+      memory: 1024
+      os_type: linux
+      vcpus: 1
+    network:
+      interfaces:
+      - address: 10.135.2.30
+        mask: 24
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: battery-1
+      - name: IF1
+        vlan: MGMT
+        address: 172.16.195.2
+        mask: 16
+        proto: static
+        type: ethernet
+
+  - type: VirtualMachine
+    general:
+      hostname: battery-management-system-2
+    hardware:
+      drives:
+      - image: otsim-opnsrc.qc2
+      memory: 1024
+      os_type: linux
+      vcpus: 1
+    network:
+      interfaces:
+      - address: 10.135.9.30
+        mask: 24
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: battery-2
+      - name: IF1
+        vlan: MGMT
+        address: 172.16.195.3
+        mask: 16
+        proto: static
+        type: ethernet
+
+  - type: VirtualMachine
+    general:
+      hostname: environmental-control-system
+    hardware:
+      drives:
+      - image: otsim-opnsrc.qc2
+      memory: 1024
+      os_type: linux
+      vcpus: 1
+    network:
+      interfaces:
+      - address: 10.135.1.33
+        mask: 24
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: bess
+    
+  - type: VirtualMachine
+    general:
+      hostname: fire-suppression-system
+    hardware:
+      drives:
+      - image: otsim-opnsrc.qc2
+      memory: 1024
+      os_type: linux
+      vcpus: 1
+    network:
+      interfaces:
+      - address: 10.135.3.31
+        mask: 24
+        name: IF0
+        proto: static
+        type: ethernet
+        vlan: safety
+    injections:
+    - src: /phenix/RESCue/phenix-injects/fss/fss.xml
+      dst: /etc/ot-sim/config.xml
+
+    # Distribution Energy Storage -- Power System Simulation
+  - type: VirtualMachine
+    general:
+      hostname: opendss
+      vm_type: kvm
+      snapshot: true
+      do_not_boot: false
+    hardware:
+      os_type: linux
+      vcpus: 2
+      memory: 2048
+      drives:
+      - image: opendss-opnsrc.qc2
+    network:
+      interfaces:
+      - name: IF0
+        vlan: MGMT
+        address: 172.16.0.1
+        mask: 16
+        proto: static
+        type: ethernet
+    injections:
+    - src: /phenix/RESCue/phenix-injects/opendss
+      dst: /opendss
+    - src: /phenix/RESCue/phenix-injects/opendss/startup/start-power.sh
+      dst: /etc/phenix/startup/55-start-power.sh
+      permissions: '0777'
+  
+  - type: VirtualMachine
+    general: 
+      hostname: broker
+      vm_type: kvm
+      snapshot: true
+    hardware: 
+      os_type: linux
+      vcpus: 2
+      memory: 2048
+      drives: 
+      - image: otsim-opnsrc.qc2
+    network: 
+      interfaces: 
+      - name: eth0
+        vlan: MGMT
+        address: 172.16.0.2
+        mask: 16 
+        proto: static
+        type: ethernet

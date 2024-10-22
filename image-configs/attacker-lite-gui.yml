@@ -1,0 +1,114 @@
+apiVersion: phenix.sandia.gov/v1
+kind: Image
+metadata:
+    name: attacker-lite-gui
+    created: "2024-06-17T14:41:41-06:00"
+    updated: "2024-07-08T14:27:06-06:00"
+spec:
+    compress: true
+    deb_append: ' --components=main,restricted,universe,multiverse'
+    format: qcow2
+    overlays: null
+    ramdisk: false
+    mirror: http://us.archive.ubuntu.com/ubuntu/
+    packages:
+        - build-essential
+        - cmake
+        - curl
+        - dbus
+        - ftp
+        - git
+        - hping3
+        - ifupdown
+        - init
+        - initramfs-tools
+        - iputils-ping
+        - isc-dhcp-client
+        - less
+        - linux-headers-generic
+        - linux-image-generic
+        - nano
+        - net-tools
+        - netbase
+        - nmap
+        - openssh-server
+        - pkg-config
+        - python3-dev
+        - python3-pip
+        - python3-setuptools
+        - python3-six
+        - python3-wheel
+        - socat
+        - sudo
+        - tcpdump
+        - tmux
+        - tshark
+        - vim
+        - vsftpd
+        - wget
+    release: jammy
+    script_order:
+        - POSTBUILD_NO_ROOT_PASSWD
+        - POSTBUILD_PHENIX_HOSTNAME
+        - POSTBUILD_PHENIX_BASE
+        - POSTBUILD_APT_CLEANUP
+        - INSTALL_DESKTOP_GUI
+        - INSTALL_FIREFOX_BROWSER
+    scripts:
+        POSTBUILD_APT_CLEANUP: |
+            apt clean || apt-get clean || echo "unable to clean apt cache"
+        POSTBUILD_NO_ROOT_PASSWD: |
+            sed -i 's/nullok_secure/nullok/' /etc/pam.d/common-auth
+            sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+            sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords yes/' /etc/ssh/sshd_config
+            sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+            sed -i 's/PermitEmptyPasswords no/PermitEmptyPasswords yes/' /etc/ssh/sshd_config
+            passwd -d root
+        POSTBUILD_PHENIX_BASE: |
+            cat > /etc/systemd/system/phenix.service <<EOF
+            [Unit]
+            Description=phenix startup service
+            After=network.target systemd-hostnamed.service
+            [Service]
+            Environment=LD_LIBRARY_PATH=/usr/local/lib
+            ExecStart=/usr/local/bin/phenix-start.sh
+            RemainAfterExit=true
+            StandardOutput=journal
+            Type=oneshot
+            [Install]
+            WantedBy=multi-user.target
+            EOF
+            mkdir -p /etc/systemd/system/multi-user.target.wants
+            ln -s /etc/systemd/system/phenix.service /etc/systemd/system/multi-user.target.wants/phenix.service
+            mkdir -p /usr/local/bin
+            cat > /usr/local/bin/phenix-start.sh <<EOF
+            #!/bin/bash
+            for file in /etc/phenix/startup/*; do
+              echo \$file
+              bash \$file
+            done
+            EOF
+            chmod +x /usr/local/bin/phenix-start.sh
+            mkdir -p /etc/phenix/startup
+        POSTBUILD_PHENIX_HOSTNAME: |
+            echo "phenix" > /etc/hostname
+            sed -i 's/127.0.1.1 .*/127.0.1.1 phenix/' /etc/hosts
+            cat > /etc/motd <<EOF
+
+            ██████╗ ██╗  ██╗███████╗███╗  ██╗██╗██╗  ██╗
+            ██╔══██╗██║  ██║██╔════╝████╗ ██║██║╚██╗██╔╝
+            ██████╔╝███████║█████╗  ██╔██╗██║██║ ╚███╔╝
+            ██╔═══╝ ██╔══██║██╔══╝  ██║╚████║██║ ██╔██╗
+            ██║     ██║  ██║███████╗██║ ╚███║██║██╔╝╚██╗
+            ╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝  ╚══╝╚═╝╚═╝  ╚═╝
+
+            EOF
+            echo "\nBuilt with phenix image on $(date)\n\n" >> /etc/motd
+        INSTALL_DESKTOP_GUI: |
+            DEBIAN_FRONTEND=noninteractive apt update
+            DEBIAN_FRONTEND=noninteractive apt-get install -yq xubuntu-desktop
+        INSTALL_FIREFOX_BROWSER: |
+           add-apt-repository ppa:mozillateam/ppa
+           apt update && apt install -yq firefox-esr
+    size: 10G
+    variant: mingui

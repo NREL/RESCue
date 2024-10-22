@@ -1,0 +1,133 @@
+apiVersion: phenix.sandia.gov/v2
+kind: Scenario
+metadata:
+  name: ah-test-scenario
+  annotations:
+    topology: ah-test-topology
+spec:
+  apps:
+  # - name: soh
+  #   fromScenario: ah-test-soh
+  # OT-SIM App - device configurations
+  - name: ot-sim
+    metadata: 
+      helics: 
+        federate: opendss
+        endpoint: updates
+        log-level: summary
+        broker: 
+          hostname: broker|eth0
+          base-fed-count: 1
+      infrastructures:
+        power-distribution:
+          storage:
+            voltage: analog-read 
+            current: analog-read
+            active_power: analog-read
+            reactive_power: analog-read
+            soc: analog-read
+    hosts: 
+    - hostname: energy-management-system
+      metadata: 
+        type: fep
+        connected_rtus: 
+        - bess-rtu
+        - meter
+    - hostname: bess-rtu
+      metadata: 
+        type: fep
+        connected_rtus: 
+        - battery-management-system-1
+        - battery-management-system-2
+    - hostname: battery-management-system-1
+      metadata: 
+        type: fd-server
+        helics: 
+          federate: battery_680
+        dnp3: 
+        - name: battery_680 
+          type: storage
+    - hostname: battery-management-system-2
+      metadata: 
+        type: fd-server
+        helics: 
+          federate: battery_680b
+        dnp3: 
+        - name: battery_680b 
+          type: storage
+    - hostname: meter
+      metadata: 
+        type: fd-server
+        helics: 
+          federate: breaker680
+        dnp3: 
+        - name: breaker680 
+          type: breaker
+    - hostname: hmi
+      metadata:
+        type: fd-client
+        node-red:
+          flow: /phenix/RESCue/phenix-injects/hmi/node-red.json
+          endpoint:
+            host: 0.0.0.0
+            port: 1880
+          auth:
+            editor:
+              user: admin
+              pass: admin
+            ui:
+              user: user
+              pass: rescue
+        connected_rtus: 
+        - energy-management-system
+
+  # Vrouter App - firewall configurations   
+  - name: vrouter
+    hosts:
+    - hostname: rtr-site
+      metadata:
+        acl:
+          ingress:
+            IF0: site-inet-rules
+            IF1: site-lan-rules
+          rulesets:
+          - name: site-lan-rules
+            default: drop
+            rules:
+            - id: 50
+              description: Allow established
+              stateful: true
+              protocol: all
+              action: accept
+          - name: site-inet-rules
+            default: drop
+            rules:
+            - id: 10
+              description: Allow site HTTPS to cloud-service
+              source:
+                address: 10.135.0.0/16
+              destination:
+                address: 192.168.100.123
+                port: 443
+              protocol: tcp
+              action: accept
+            - id: 15
+              description: Allow attack HTTPS to cloud-service
+              source:
+                address: 192.168.0.0/16
+              destination:
+                address: 192.168.100.123
+                port: 443
+              protocol: tcp
+              action: accept
+            - id: 20
+              description: Allow ICMP to internet
+              destination:
+                address: 192.168.0.0/16
+              protocol: icmp
+              action: accept
+            - id: 50
+              description: Allow established
+              stateful: true
+              protocol: all
+              action: accept

@@ -1,0 +1,42 @@
+//--------------------------------------------------------------------------------------------------//
+// Escola Politécnica da USP
+// PEA
+// Autor
+//        Nome: Paulo Radatz
+//        NUSP: 6905560
+//------------------------------------------------------------------------------------------------------------------------------//
+
+//------------------------------------------------------------------------------------------------------------------------------//
+// Modelagem da rede teste IEEE 13 barras
+//------------------------------------------------------------------------------------------------------------------------------//
+
+// No Apêndice A do meu TCC se encontra toda a explicação para rodar os diferentes cenários.
+
+//------------------------------------------------------------------------------------------------------------------------------//
+//Reinicia o programa
+
+Clear
+
+//------------------------------------------------------------------------------------------------------------------------------//
+// Files que descrevem o circuito
+
+Redirect subestacao.dss  
+Redirect linecodes.dss
+Redirect lines.dss
+Redirect loadshape.dss
+Redirect loads.dss
+Redirect capacitors.dss
+Redirect transformer_sub.dss
+Redirect transformer.dss
+Redirect regulators.dss
+Redirect switches.dss
+Redirect storage_power.dss
+
+solve
+
+!new monitor.storage_power2 storage.battery_680 1 mode=1 ppolar=no
+!export monitors storage_power2 storage_power2.csv
+!export profile
+
+plot profile phases
+

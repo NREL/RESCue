@@ -1,0 +1,39 @@
+apiVersion: phenix.sandia.gov/v2
+kind: Scenario
+metadata:
+    name: ah-test-soh
+    annotations:
+        topology: ah-test-topology
+spec:
+  apps:
+  - name: soh
+    metadata:
+      testReachability: off
+      testCustomReachability:
+      - src: hmi
+        dst: cloud-service|eth0
+        proto: tcp
+        port: 443
+        wait: 30s
+      hostCustomTests:
+        remote-attacker1:
+        - name: cloud-server-reachability
+          testScript: |
+            ping -c 1 192.168.100.123 
+          validateStdout: | 
+            count=$(grep "64 bytes" | wc -l)
+            [[ $count -eq 1 ]] && exit 0 || exit 1
+        remote-attacker2:
+        - name: cloud-server-reachability
+          testScript: |
+            ping -c 1 192.168.100.123 
+          validateStdout: | 
+            count=$(grep "64 bytes" | wc -l)
+            [[ $count -eq 1 ]] && exit 0 || exit 1
+        remote-attacker3:
+        - name: cloud-server-reachability
+          testScript: |
+            ping -c 1 192.168.100.123 
+          validateStdout: | 
+            count=$(grep "64 bytes" | wc -l)
+            [[ $count -eq 1 ]] && exit 0 || exit 1

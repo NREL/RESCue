@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ot-sim>
+  <message-bus>
+    <pull-endpoint>tcp://127.0.0.1:1234</pull-endpoint>
+    <pub-endpoint>tcp://127.0.0.1:5678</pub-endpoint>
+  </message-bus>
+  <cpu>
+    <api-endpoint>0.0.0.0:9101</api-endpoint>
+    <module name="backplane">ot-sim-message-bus {{config_file}}</module>
+    <module name="modbus">ot-sim-modbus-module {{config_file}}</module>
+    <module name="logic">ot-sim-logic-module {{config_file}}</module>
+  </cpu>
+  <logic>
+    <period>1s</period>
+    <program>
+    <![CDATA[
+      fssalert = fsscontrol
+    ]]>
+    </program>
+    <variables>
+      <fsscontrol>0</fsscontrol>
+      <fssalert>0</fssalert>
+    </variables>
+    <process-updates>true</process-updates>
+  </logic>
+  <modbus name="mb-server" mode="server">
+    <endpoint>0.0.0.0:502</endpoint>
+    <period>5s</period>
+    <register type="input">
+      <address>1</address> 
+      <tag>fsscontrol</tag>
+    </register>
+    <register type="discrete">
+      <address>10001</address> 
+      <tag>fssalert</tag>
+    </register>
+  </modbus>
+</ot-sim>

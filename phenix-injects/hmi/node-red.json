@@ -1,0 +1,1072 @@
+[
+    {
+        "id": "b71499a923d95389",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "177a3306aa600a53",
+        "type": "group",
+        "z": "b71499a923d95389",
+        "style": {
+            "stroke": "#333333",
+            "stroke-opacity": "1",
+            "fill": "#181818",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#cccccc"
+        },
+        "nodes": [
+            "4dbf1ee6e0d7dc08",
+            "f48753323efba4b1",
+            "c3dda40d7595d10d",
+            "3d017e10cf604a64",
+            "b95eaaca7eb2cb13",
+            "11c3ab05e54fed00",
+            "3e0bf6eae19cc546",
+            "a46e02560b78fd8d",
+            "7e0e4260cc2c9079",
+            "1eeb56a6a3ec16ad",
+            "5ed3163b9cb4b968",
+            "7f1ca933b07adff4",
+            "3684f79fcce457cf",
+            "2ae33527b4ff809a",
+            "5562f9508c7342a6",
+            "d3786e1c66a93fbf"
+        ],
+        "x": 294,
+        "y": -21,
+        "w": 752,
+        "h": 322
+    },
+    {
+        "id": "5283f2976b59ee5a",
+        "type": "group",
+        "z": "b71499a923d95389",
+        "style": {
+            "stroke": "#333333",
+            "stroke-opacity": "1",
+            "fill": "#181818",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#cccccc"
+        },
+        "nodes": [
+            "bd5ce22f90b403aa",
+            "7d034ab58c1ce80e",
+            "09bcc9f9e1523595",
+            "af2d1fe3e767bf0d",
+            "5814958e0fb4d9a1",
+            "888a393cef0f04dc",
+            "515dab3037bd8f0b",
+            "771ba87d607d168e",
+            "6dc0f76726bac361",
+            "af7417df2891e577",
+            "7c51c4942da94ce0",
+            "2adf3a7a8acb6cc5"
+        ],
+        "x": 1034,
+        "y": 59,
+        "w": 732,
+        "h": 242
+    },
+    {
+        "id": "a72f98fefdf2e0b3",
+        "type": "group",
+        "z": "b71499a923d95389",
+        "style": {
+            "stroke": "#333333",
+            "stroke-opacity": "1",
+            "fill": "#181818",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#cccccc"
+        },
+        "nodes": [
+            "7ad56279a70b9010",
+            "9d264f966e2a937c",
+            "4e0feff0a2a5aa4e",
+            "141f3a4522901c0b",
+            "1ad5ae4ff5acd55c",
+            "b64ab925f075da72",
+            "5e0a05c77ff6d8c5",
+            "5f3ea005883b1da0",
+            "16cea73862a65f4f",
+            "6e6567f7ffa195fd",
+            "e13401c10308c7da",
+            "d20637171270de3b"
+        ],
+        "x": 594,
+        "y": 339,
+        "w": 732,
+        "h": 242
+    },
+    {
+        "id": "43defe2e05f9bcae",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "6ffaa6e2faf26889",
+        "type": "ui_group",
+        "name": "Breaker",
+        "tab": "f34dda5af6033a40",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f34dda5af6033a40",
+        "type": "ui_tab",
+        "name": "Energy Storage Site",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "082b415a916256ab",
+        "type": "ui_group",
+        "name": "Battery A",
+        "tab": "f34dda5af6033a40",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "08b8cac7ada0775a",
+        "type": "ui_group",
+        "name": "Battery B",
+        "tab": "f34dda5af6033a40",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bd5ce22f90b403aa",
+        "type": "comment",
+        "z": "b71499a923d95389",
+        "g": "5283f2976b59ee5a",
+        "name": "Battery A",
+        "info": "",
+        "x": 1120,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "4dbf1ee6e0d7dc08",
+        "type": "comment",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "name": "Breaker",
+        "info": "",
+        "x": 370,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f48753323efba4b1",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "tag": "breaker680.status",
+        "updates": true,
+        "x": 530,
+        "y": 100,
+        "wires": [
+            [
+                "11c3ab05e54fed00"
+            ]
+        ]
+    },
+    {
+        "id": "c3dda40d7595d10d",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "tag": "breaker680.power",
+        "updates": true,
+        "x": 530,
+        "y": 140,
+        "wires": [
+            [
+                "7e0e4260cc2c9079",
+                "a46e02560b78fd8d"
+            ]
+        ]
+    },
+    {
+        "id": "3d017e10cf604a64",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "tag": "breaker680.voltage",
+        "updates": true,
+        "x": 530,
+        "y": 180,
+        "wires": [
+            [
+                "1eeb56a6a3ec16ad"
+            ]
+        ]
+    },
+    {
+        "id": "3684f79fcce457cf",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "tag": "breaker680.current",
+        "updates": true,
+        "x": 530,
+        "y": 220,
+        "wires": [
+            [
+                "5ed3163b9cb4b968"
+            ]
+        ]
+    },
+    {
+        "id": "b95eaaca7eb2cb13",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "tag": "breaker680.freq",
+        "updates": true,
+        "x": 520,
+        "y": 260,
+        "wires": [
+            [
+                "7f1ca933b07adff4",
+                "3e0bf6eae19cc546"
+            ]
+        ]
+    },
+    {
+        "id": "11c3ab05e54fed00",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "group": "6ffaa6e2faf26889",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 730,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "3e0bf6eae19cc546",
+        "type": "ui_gauge",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "name": "Frequency Guage",
+        "group": "6ffaa6e2faf26889",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "Hz",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "48",
+        "seg2": "62",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "a46e02560b78fd8d",
+        "type": "ui_chart",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "name": "Power Chart",
+        "group": "6ffaa6e2faf26889",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Powerchart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 890,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e0e4260cc2c9079",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "group": "6ffaa6e2faf26889",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Power",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 730,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "1eeb56a6a3ec16ad",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "group": "6ffaa6e2faf26889",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Voltage",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 740,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "5ed3163b9cb4b968",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "group": "6ffaa6e2faf26889",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 740,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "7f1ca933b07adff4",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "group": "6ffaa6e2faf26889",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Frequency",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 750,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7d034ab58c1ce80e",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "5283f2976b59ee5a",
+        "tag": "battery_680.active_power",
+        "updates": true,
+        "x": 1300,
+        "y": 100,
+        "wires": [
+            [
+                "515dab3037bd8f0b"
+            ]
+        ]
+    },
+    {
+        "id": "09bcc9f9e1523595",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "5283f2976b59ee5a",
+        "tag": "battery_680.reactive_power",
+        "updates": true,
+        "x": 1310,
+        "y": 140,
+        "wires": [
+            [
+                "771ba87d607d168e"
+            ]
+        ]
+    },
+    {
+        "id": "af2d1fe3e767bf0d",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "5283f2976b59ee5a",
+        "tag": "battery_680.voltage",
+        "updates": true,
+        "x": 1300,
+        "y": 180,
+        "wires": [
+            [
+                "6dc0f76726bac361"
+            ]
+        ]
+    },
+    {
+        "id": "5814958e0fb4d9a1",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "5283f2976b59ee5a",
+        "tag": "battery_680.current",
+        "updates": true,
+        "x": 1290,
+        "y": 220,
+        "wires": [
+            [
+                "af7417df2891e577"
+            ]
+        ]
+    },
+    {
+        "id": "888a393cef0f04dc",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "5283f2976b59ee5a",
+        "tag": "battery_680.soc",
+        "updates": true,
+        "x": 1280,
+        "y": 260,
+        "wires": [
+            [
+                "7c51c4942da94ce0",
+                "2adf3a7a8acb6cc5"
+            ]
+        ]
+    },
+    {
+        "id": "515dab3037bd8f0b",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "5283f2976b59ee5a",
+        "group": "082b415a916256ab",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Real Power",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1510,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "771ba87d607d168e",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "5283f2976b59ee5a",
+        "group": "082b415a916256ab",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Reactive Power",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1520,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "6dc0f76726bac361",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "5283f2976b59ee5a",
+        "group": "082b415a916256ab",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Voltage",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1500,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "af7417df2891e577",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "5283f2976b59ee5a",
+        "group": "082b415a916256ab",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1500,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "7c51c4942da94ce0",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "5283f2976b59ee5a",
+        "group": "082b415a916256ab",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "SOC",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1490,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2adf3a7a8acb6cc5",
+        "type": "ui_chart",
+        "z": "b71499a923d95389",
+        "g": "5283f2976b59ee5a",
+        "name": "",
+        "group": "082b415a916256ab",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "SOC Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1670,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7ad56279a70b9010",
+        "type": "comment",
+        "z": "b71499a923d95389",
+        "g": "a72f98fefdf2e0b3",
+        "name": "Battery B",
+        "info": "",
+        "x": 680,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "9d264f966e2a937c",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "a72f98fefdf2e0b3",
+        "tag": "battery_680b.active_power",
+        "updates": true,
+        "x": 860,
+        "y": 380,
+        "wires": [
+            [
+                "5e0a05c77ff6d8c5"
+            ]
+        ]
+    },
+    {
+        "id": "4e0feff0a2a5aa4e",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "a72f98fefdf2e0b3",
+        "tag": "battery_680b.reactive_power",
+        "updates": true,
+        "x": 870,
+        "y": 420,
+        "wires": [
+            [
+                "5f3ea005883b1da0"
+            ]
+        ]
+    },
+    {
+        "id": "141f3a4522901c0b",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "a72f98fefdf2e0b3",
+        "tag": "battery_680b.voltage",
+        "updates": true,
+        "x": 860,
+        "y": 460,
+        "wires": [
+            [
+                "16cea73862a65f4f"
+            ]
+        ]
+    },
+    {
+        "id": "1ad5ae4ff5acd55c",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "a72f98fefdf2e0b3",
+        "tag": "battery_680b.current",
+        "updates": true,
+        "x": 850,
+        "y": 500,
+        "wires": [
+            [
+                "6e6567f7ffa195fd"
+            ]
+        ]
+    },
+    {
+        "id": "b64ab925f075da72",
+        "type": "ot-sim in",
+        "z": "b71499a923d95389",
+        "g": "a72f98fefdf2e0b3",
+        "tag": "battery_680b.soc",
+        "updates": true,
+        "x": 840,
+        "y": 540,
+        "wires": [
+            [
+                "e13401c10308c7da",
+                "d20637171270de3b"
+            ]
+        ]
+    },
+    {
+        "id": "5e0a05c77ff6d8c5",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "a72f98fefdf2e0b3",
+        "group": "08b8cac7ada0775a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Real Power",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1070,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "5f3ea005883b1da0",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "a72f98fefdf2e0b3",
+        "group": "08b8cac7ada0775a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Reactive Power",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1080,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "16cea73862a65f4f",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "a72f98fefdf2e0b3",
+        "group": "08b8cac7ada0775a",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Voltage",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1060,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "6e6567f7ffa195fd",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "a72f98fefdf2e0b3",
+        "group": "08b8cac7ada0775a",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1060,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "e13401c10308c7da",
+        "type": "ui_text",
+        "z": "b71499a923d95389",
+        "g": "a72f98fefdf2e0b3",
+        "group": "08b8cac7ada0775a",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "SOC",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1050,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "d20637171270de3b",
+        "type": "ui_chart",
+        "z": "b71499a923d95389",
+        "g": "a72f98fefdf2e0b3",
+        "name": "",
+        "group": "08b8cac7ada0775a",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "SOC Chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1230,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2ae33527b4ff809a",
+        "type": "ui_button",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "name": "BreakerOpen",
+        "group": "6ffaa6e2faf26889",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "open",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 710,
+        "y": 20,
+        "wires": [
+            [
+                "d3786e1c66a93fbf"
+            ]
+        ]
+    },
+    {
+        "id": "5562f9508c7342a6",
+        "type": "ui_button",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "name": "BreakerClose",
+        "group": "6ffaa6e2faf26889",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "close",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 720,
+        "y": 60,
+        "wires": [
+            [
+                "d3786e1c66a93fbf"
+            ]
+        ]
+    },
+    {
+        "id": "d3786e1c66a93fbf",
+        "type": "ot-sim out",
+        "z": "b71499a923d95389",
+        "g": "177a3306aa600a53",
+        "tag": "breaker680.controls",
+        "x": 930,
+        "y": 40,
+        "wires": []
+    }
+]

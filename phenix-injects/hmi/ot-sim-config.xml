@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<ot-sim>
+  <message-bus>
+    <pull-endpoint>tcp://127.0.0.1:1234</pull-endpoint>
+    <pub-endpoint>tcp://127.0.0.1:5678</pub-endpoint>
+  </message-bus>
+  <cpu>
+    <module name="backplane">ot-sim-message-bus {{config_file}}</module>
+    <module name="dnp3">ot-sim-dnp3-module {{config_file}}</module>
+    <module name="node-red">ot-sim-node-red-module {{config_file}}</module>
+    <api-endpoint>127.0.0.1:9101</api-endpoint>
+  </cpu>
+  <node-red>
+    <executable>node-red</executable>
+    <settings-path>/etc/node-red.js</settings-path>
+    <theme>dark</theme>
+    <flow-path>/etc/node-red.json</flow-path>
+    <authentication>
+      <editor username="admin" password="admin"></editor>
+      <ui username="user" password="rescue"></ui>
+    </authentication>
+    <endpoint host="0.0.0.0" port="80"></endpoint>
+  </node-red>
+  <dnp3 name="dnp3-outstation" mode="client">
+    <endpoint>10.135.1.31:20000</endpoint>
+    <master name="dnp3-master">
+      <local-address>1</local-address>
+      <remote-address>1024</remote-address>
+      <scan-rate>5</scan-rate>
+      <input type="analog">
+        <address>0</address>
+        <tag>battery_680.active_power</tag>
+      </input>
+      <input type="analog">
+        <address>1</address>
+        <tag>battery_680.current</tag>
+      </input>
+      <input type="analog">
+        <address>2</address>
+        <tag>battery_680.reactive_power</tag>
+      </input>
+      <input type="analog">
+        <address>3</address>
+        <tag>battery_680.soc</tag>
+      </input>
+      <input type="analog">
+        <address>4</address>
+        <tag>battery_680.voltage</tag>
+      </input>
+      <input type="analog">
+        <address>5</address>
+        <tag>battery_680b.active_power</tag>
+      </input>
+      <input type="analog">
+        <address>6</address>
+        <tag>battery_680b.current</tag>
+      </input>
+      <input type="analog">
+        <address>7</address>
+        <tag>battery_680b.reactive_power</tag>
+      </input>
+      <input type="analog">
+        <address>8</address>
+        <tag>battery_680b.soc</tag>
+      </input>
+      <input type="analog">
+        <address>9</address>
+        <tag>battery_680b.voltage</tag>
+      </input>
+      <input type="analog">
+        <address>10</address>
+        <tag>breaker680.voltage</tag>
+      </input>
+      <input type="analog">
+        <address>11</address>
+        <tag>breaker680.current</tag>
+      </input>
+      <input type="analog">
+        <address>12</address>
+        <tag>breaker680.freq</tag>
+      </input>
+      <input type="analog">
+        <address>13</address>
+        <tag>breaker680.power</tag>
+      </input>
+      <input type="binary">
+        <address>0</address>
+        <tag>breaker680.status</tag>
+      </input>
+      <output type="binary">
+        <address>0</address>
+        <tag>breaker680.controls</tag>
+      </output>
+    </master>
+  </dnp3>
+</ot-sim>
