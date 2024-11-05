@@ -56,7 +56,7 @@ The Battery Energy Storage System (BESS) plant includes an environmental control
 
 ### Experiment Architecture Diagram
 
-![RESCue Experiment Architecture](media/rescueArchDiagram.png)
+![RESCue Experiment Architecture](media/rescueBESSPlantFinal.png)
 
 ### Experiment Architecture Description
 
