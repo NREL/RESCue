@@ -130,4 +130,9 @@ spec:
               description: Allow established
               stateful: true
               protocol: all
-              action: accept
+              action: accept 
+  - name: helics
+    metadata:
+      broker:
+        root: broker|eth0
+        log-level: summary
