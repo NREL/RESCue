@@ -140,7 +140,7 @@ spec:
       hostname: hmi
     hardware:
       drives:
-      - image: ot-sim-nr-gui.qc2
+      - image: otsim-opnsrc-nrgui.qc2
       memory: 4096
       os_type: linux
       vcpus: 2
