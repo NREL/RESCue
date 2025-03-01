@@ -131,8 +131,3 @@ spec:
               stateful: true
               protocol: all
               action: accept 
-  - name: helics
-    metadata:
-      broker:
-        root: broker|eth0
-        log-level: summary
