@@ -115,11 +115,13 @@ spec:
             wget -O installer.sh \
               https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered
             
-            bash ./installer.sh --confirm-root --confirm-install --no-init --skip-pi --node18 \
+            bash ./installer.sh --confirm-root --confirm-install --no-init --skip-pi --node18 --nodered-version="3.1.3" \
               && rm installer.sh
             
-            cd /root/.node-red 
-            npm install zeromq 
+            cd /root/.node-red  
+            npm install nan 
+            npm install node-gyp-build 
+            npm install zeromq@5.3.1
             npm install \
               node-red-dashboard \
               node-red-contrib-modbus \

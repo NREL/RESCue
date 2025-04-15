@@ -1,7 +1,7 @@
 apiVersion: phenix.sandia.gov/v1
 kind: Topology
 metadata:
-  name: ah-test-topology
+  name: rescue-topology
 spec:
   nodes:
   # Control
@@ -156,7 +156,11 @@ spec:
       - destination: 0.0.0.0/0
         next: 10.135.2.31
     injections:
-
+    - src: /phenix/RESCue/phenix-injects/hmi/55_hmistart.sh
+      dst: /etc/phenix/startup/55_hmistart.sh
+      permissions: '0777'
+    - src: /phenix/RESCue/phenix-injects/hmi/node-red-contrib-ot-sim-0.0.1.tgz
+      dst: /root/.node-red/node-red-contrib-ot-sim-0.0.1.tgz
     
   - type: VirtualMachine
     general:

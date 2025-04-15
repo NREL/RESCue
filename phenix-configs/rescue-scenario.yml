@@ -1,13 +1,13 @@
 apiVersion: phenix.sandia.gov/v2
 kind: Scenario
 metadata:
-  name: ah-test-scenario
+  name: rescue-scenario
   annotations:
-    topology: ah-test-topology
+    topology: rescue-topology
 spec:
   apps:
   # - name: soh
-  #   fromScenario: ah-test-soh
+  #   fromScenario: rescue-soh
   # OT-SIM App - device configurations
   - name: ot-sim
     metadata: 

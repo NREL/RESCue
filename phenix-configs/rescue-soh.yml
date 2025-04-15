@@ -1,9 +1,9 @@
 apiVersion: phenix.sandia.gov/v2
 kind: Scenario
 metadata:
-    name: ah-test-soh
+    name: rescue-soh
     annotations:
-        topology: ah-test-topology
+        topology: rescue-topology
 spec:
   apps:
   - name: soh
